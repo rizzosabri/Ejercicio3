@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
 
-  
   @Output() newTask = new EventEmitter<string>();
   task: string = '';
 
@@ -18,6 +17,6 @@ export class FormComponent {
     this.newTask.emit(this.task);
     alert('Formulario guardado');
     this.task = '';
-
   }
+  
 }

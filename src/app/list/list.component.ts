@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css'
 })
+
 export class ListComponent {
   @Input() tasks: string[] = [];
   @Output() tasksCleared: EventEmitter<void> = new EventEmitter<void>();
@@ -21,5 +22,5 @@ export class ListComponent {
       this.tasksCleared.emit(); // Emitir evento
     }
 
-}
+  }
 }

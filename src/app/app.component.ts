@@ -10,6 +10,7 @@ import { ListComponent } from './list/list.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'toDoList-app';
 
@@ -19,7 +20,6 @@ export class AppComponent {
     this.loadTasks();
   }
 
-
   addTask(task: string) {
     this.tasks.push(task);
     this.saveAllTasks()
@@ -27,15 +27,14 @@ export class AppComponent {
 
   saveAllTasks() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
-
   }
 
   loadTasks() {
     const tasks = localStorage.getItem('tasks');
     this.tasks = tasks ? JSON.parse(tasks) : [];
-
   }
-   onTasksCleared() {
+  
+  onTasksCleared() {
     this.tasks = [];
   }
 
